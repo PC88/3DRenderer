@@ -76,7 +76,12 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Vendor;$(SolutionDir)Vendor\GLEW\include;$(SolutionDir)Vendor\GLFW\include;$(SolutionDir)Src;$(SolutionDir)Vendor\SPD-include;$(SolutionDir)Vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)Vendor\GLFW\lib-vc2015;$(SolutionDir)Vendor\GLEW\lib\Debug\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32d.lib;opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -116,6 +121,77 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Src\Renderer\Renderer.cpp" />
+    <ClCompile Include="Src\Renderer\OpenGL\OpenGLBuffer.cpp" />
+    <ClCompile Include="Src\Renderer\Buffer.cpp" />
+    <ClCompile Include="Vendor\imgui\imgui.cpp" />
+    <ClCompile Include="Vendor\imgui\imgui_demo.cpp" />
+    <ClCompile Include="Vendor\imgui\imgui_draw.cpp" />
+    <ClCompile Include="Vendor\imgui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="Vendor\imgui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="Vendor\imgui\imgui_widgets.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Src\Renderer\Renderer.h" />
+    <ClInclude Include="Src\Renderer\OpenGL\OpenGLBuffer.h" />
+    <ClInclude Include="Src\Renderer\Buffer.h" />
+    <ClInclude Include="Vendor\imgui\imconfig.h" />
+    <ClInclude Include="Vendor\imgui\imgui.h" />
+    <ClInclude Include="Vendor\imgui\imgui_impl_glfw.h" />
+    <ClInclude Include="Vendor\imgui\imgui_impl_opengl3.h" />
+    <ClInclude Include="Vendor\imgui\imgui_internal.h" />
+    <ClInclude Include="Vendor\imgui\imstb_rectpack.h" />
+    <ClInclude Include="Vendor\imgui\imstb_textedit.h" />
+    <ClInclude Include="Vendor\imgui\imstb_truetype.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\async.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\async_logger.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\common.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\details\async_logger_impl.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\details\circular_q.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\details\console_globals.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\details\file_helper.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\details\fmt_helper.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\details\logger_impl.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\details\log_msg.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\details\mpmc_blocking_q.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\details\null_mutex.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\details\os.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\details\pattern_formatter.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\details\periodic_worker.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\details\registry.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\details\thread_pool.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\fmt\bin_to_hex.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\fmt\bundled\colors.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\fmt\bundled\core.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\fmt\bundled\format-inl.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\fmt\bundled\format.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\fmt\bundled\ostream.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\fmt\bundled\posix.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\fmt\bundled\printf.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\fmt\bundled\ranges.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\fmt\bundled\time.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\fmt\fmt.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\fmt\ostr.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\formatter.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\logger.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\sinks\android_sink.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\sinks\ansicolor_sink.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\sinks\base_sink.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\sinks\basic_file_sink.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\sinks\daily_file_sink.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\sinks\dist_sink.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\sinks\msvc_sink.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\sinks\null_sink.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\sinks\ostream_sink.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\sinks\rotating_file_sink.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\sinks\sink.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\sinks\stdout_color_sinks.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\sinks\stdout_sinks.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\sinks\syslog_sink.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\sinks\wincolor_sink.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\spdlog.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\tweakme.h" />
+    <ClInclude Include="Vendor\SPD-include\spdlog\version.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
