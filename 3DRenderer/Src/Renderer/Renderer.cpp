@@ -1,10 +1,10 @@
 #include "Renderer\Renderer.h"
 
 
+RendererAPI Renderer::s_RendererAPI = RendererAPI::OpenGL;
 
 Renderer::Renderer()
 {
-	s_RendererAPI = RendererAPI::OpenGL;
 }
 
 

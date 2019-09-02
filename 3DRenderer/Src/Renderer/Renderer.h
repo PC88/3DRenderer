@@ -7,13 +7,13 @@ enum class RendererAPI
 
 class Renderer
 {
+private:
+	static RendererAPI s_RendererAPI; 
+
 public:
 	Renderer();
 	virtual ~Renderer();
 
 	static inline RendererAPI GetRendererAPI() { return s_RendererAPI; }
-
-private:
-	static RendererAPI s_RendererAPI;
 };
 
