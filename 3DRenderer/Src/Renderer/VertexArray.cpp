@@ -3,15 +3,6 @@
 #include "Renderer/VertexArray.h"
 #include "Renderer/OpenGL/OpenGLVertexArray.h"
 
-VertexArray::VertexArray()
-{
-}
-
-
-VertexArray::~VertexArray()
-{
-}
-
 
 VertexArray* VertexArray::Create()
 {
