@@ -121,6 +121,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Src\Renderer\OpenGL\OpenGLVertexArray.cpp" />
     <ClCompile Include="Src\Renderer\Renderer.cpp" />
     <ClCompile Include="Src\Renderer\OpenGL\OpenGLBuffer.cpp" />
     <ClCompile Include="Src\Renderer\Buffer.cpp" />
@@ -130,8 +131,10 @@
     <ClCompile Include="Vendor\imgui\imgui_impl_glfw.cpp" />
     <ClCompile Include="Vendor\imgui\imgui_impl_opengl3.cpp" />
     <ClCompile Include="Vendor\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="Src\Renderer\VertexArray.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Src\Renderer\OpenGL\OpenGLVertexArray.h" />
     <ClInclude Include="Src\Renderer\Renderer.h" />
     <ClInclude Include="Src\Renderer\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="Src\Renderer\Buffer.h" />
@@ -192,6 +195,7 @@
     <ClInclude Include="Vendor\SPD-include\spdlog\spdlog.h" />
     <ClInclude Include="Vendor\SPD-include\spdlog\tweakme.h" />
     <ClInclude Include="Vendor\SPD-include\spdlog\version.h" />
+    <ClInclude Include="Src\Renderer\VertexArray.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
