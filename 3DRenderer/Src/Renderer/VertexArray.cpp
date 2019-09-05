@@ -8,8 +8,8 @@ VertexArray* VertexArray::Create()
 {
 	switch (Renderer::GetRendererAPI())
 	{
-	case RendererAPI::None: return nullptr;
-	case RendererAPI::OpenGL: return new OpenGLVertexArray();
+	case RendererAPI::API::None: return nullptr;
+	case RendererAPI::API::OpenGL: return new OpenGLVertexArray();
 	}
 
 	// error check here

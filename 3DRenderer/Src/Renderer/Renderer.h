@@ -1,19 +1,20 @@
 #pragma once
-
-enum class RendererAPI
-{
-	None = 0, OpenGL = 1, Direct3D = 2, Vulkan = 3
-};
+#include "Renderer/RendererCommand.h"
 
 class Renderer
 {
 private:
-	static RendererAPI s_RendererAPI; 
+	static RendererAPI::API s_RendererAPI; 
 
 public:
 	Renderer();
 	virtual ~Renderer();
 
-	static inline RendererAPI GetRendererAPI() { return s_RendererAPI; }
+	static void BeginScene(); // TODO take in params
+	static void EndScene();
+
+	static void Submit(const std::shared_ptr<VertexArray>& vertexArray);
+
+	static inline RendererAPI::API GetRendererAPI() { return s_RendererAPI; }
 };
 
